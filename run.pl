@@ -1,3 +1,4 @@
+#!/usr/bin/perl
 ##
 ##  run.pl
 ##		-- perl script
@@ -11,5 +12,12 @@
 ##
 ##	NOTE: Do regular commits that show agile style iterations through the problem.
 ##
+
+use strict;
+use warnings;
+
+use lib 'A-Fun-Problem';
+use SillyFunction;
+
 
 print "Perl Loaded and Ready!\n";
