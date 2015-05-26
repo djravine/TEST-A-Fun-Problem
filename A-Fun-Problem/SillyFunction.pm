@@ -9,8 +9,23 @@
 # If you prefer a different language, you can provide your solution in PHP, 
 # Python or Javascript too.
 #
+# UPDATE: Added 'my $this = shift;' as the first @_ var contains the name of
+# the package causing the subroutine to fail. Also added tabs/spaces/returns
+# for readability. AUTHOR: Adan Rehtla DATE: 2013-05-27
+#
 package SillyFunction;
 
+
+#--------------------------------------------
+# SUBROUTINE: 'group_products'
+#--------------------------------------------
+# PURPOSE: Sorts through the input array and returns an array of 'Brands'
+# and 'Types' found in the input array.
+# PRE: First argument - array of product hashes with 'brand' and 'type'
+# variables.
+# POST: Returns an array of available 'Brands' and 'Types' found in the 
+# input array.
+#--------------------------------------------
 sub group_products {
 
 	my $this = shift; ## ADDED - 2013-05-27 - The first @_ var contains the name of the package.
@@ -32,5 +47,8 @@ sub group_products {
 	
 	$grouped_products;
 }
+#--------------------------------------------
+
+
 
 1;

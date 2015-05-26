@@ -12,31 +12,27 @@
 ##
 ##	NOTE: Do regular commits that show agile style iterations through the problem.
 ##
+##  AUTHOR: Adan Rehtla
+##  DATE: 2015-05-27
+##  EDITOR: Written with 'Adobe Brackets' [ http://brackets.io/ ]
+##  TESTED: Perl compiled and Tested with 'IDE-like support for Brackets' [ https://github.com/jadbox/brackets-integrated-development ]
+##
 ##	----------------------------------------------------------------------------
 
 use strict;
 use warnings;
-
-
-## USE CUSTOME PACKAGE
-use lib 'A-Fun-Problem';
-use SillyFunction;
-
-
-## DATA::DUMPER FOR DEBUG
-use Data::Dumper qw(Dumper);
-
-
-## TEST:: SIMPLE FOR TESTING
-use Test::Simple tests => 4;
+use lib 'A-Fun-Problem';	 ## USE CUSTOME PACKAGE
+use SillyFunction; 			 ## USE CUSTOME PACKAGE
+use Data::Dumper qw(Dumper); ## DATA::DUMPER FOR DEBUG
+use Test::Simple tests => 4; ## TEST:: SIMPLE FOR TESTING
 
 
 ## LOADED AND READY
-print "PERL LOADED AND READY!\n";
+print "PERL LOADED AND READY!\n\n";
 
 
 ## SETUP TEST DATA
-print "BUILDING TEST DATA... ";
+print "BUILDING TEST DATA...\n";
 ok(
 	my @prods = (
 		{
@@ -77,7 +73,7 @@ ok(
 
 
 ## RUN CUSTOM PACKAGE SUBROUTINE
-print "\n\n\nRUNNING CUSTOM PACKAGE SUBROUTINE 'SillyFunction->group_products'... ";
+print "\n\n\nRUNNING CUSTOM PACKAGE SUBROUTINE 'SillyFunction->group_products'...\n";
 ok(
 	my @result = SillyFunction->group_products( \@prods )
 );
