@@ -12,20 +12,24 @@
 package SillyFunction;
 
 sub group_products {
+
+	my $this = shift; ## ADDED - 2013-05-27 - The first @_ var contains the name of the package.
 	my $products = shift;
 	my %brand_type = ();
 	my $grouped_products = [];
 
-	foreach (@{$products}) {
-		$brand_type{$_->{brand}} ||= {};
-		$brand_type{$_->{brand}}->{$_->{type}} = 1;
+	foreach ( @{ $products } ) {
+		$brand_type{ $_->{brand} } ||= {};
+		$brand_type{ $_->{brand} }->{ $_->{type} } = 1;
 	}
-	foreach (sort keys %brand_type) {
+	
+	foreach ( sort keys %brand_type ) {
 		my $brand = $_;
-		foreach (sort keys %{$brand_type{$brand}}) {
-			push(@{$grouped_products}, { brand => $brand, type => $_});
+		foreach ( sort keys %{ $brand_type{ $brand } } ) {
+			push( @{ $grouped_products }, { brand => $brand, type => $_} );
 		}
 	}
+	
 	$grouped_products;
 }
 
